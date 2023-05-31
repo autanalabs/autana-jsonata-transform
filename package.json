@@ -1,7 +1,7 @@
 {
-  "name": "node-red-contrib-transform",
-  "version": "1.1.0",
-  "description": "JSONata message transformation.",
+  "name": "autana-jsonata-transform",
+  "version": "2.0.0",
+  "description": "A JSONata message transformation node for Node-RED",
   "contributors": [
     "temior",
     "Gilbert Gonzalez <gb@autanalabs.com>"
@@ -13,13 +13,21 @@
     "transform",
     "JSONata"
   ],
+  "engines": {
+    "node": ">=12.0.0"
+  },
   "node-red": {
+    "version": ">=1.3.7",
     "nodes": {
       "transform": "transform.js"
     }
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/temior/node-red-contrib-transform.git"
-  }
+    "url": "git+https://github.com/autanalabs/autana-jsonata-transform.git"
+  },
+  "bugs": {
+    "url": "https://github.com/autanalabs/autana-jsonata-transform/issues"
+  },
+  "homepage": "https://github.com/autanalabs/autana-jsonata-transform#readme"
 }

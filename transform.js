@@ -1,29 +1,11 @@
 module.exports = function (RED) {
-    function isMessage(value) {
-        return typeof value === 'object' || value === undefined;
-    }
-
-    function isOutputPacket(value) {
-        return Array.isArray(value) ? value.every(isMessage) : isMessage(value);
-    }
-
-    function isFlowPacket(value) {
-        return Array.isArray(value) ? value.every(isOutputPacket) : isMessage(value);
-    }
-
+   
     function build(template, node) {
         return RED.util.prepareJSONataExpression(template, node);
     }
 
     function transform(message, expression) {
-
         const result = RED.util.evaluateJSONataExpression(expression, message);
-
-        /*
-        if (!isFlowPacket(result)) {
-            throw new Error('The transformation result has an invalid structure.');
-        }
-        */
 
         return result;
     }
@@ -36,7 +18,7 @@ module.exports = function (RED) {
         }
     }
 
-    function TransformNode(config) {
+    function JSONataTransformNode(config) {
         RED.nodes.createNode(this, config);
 
         const nodeExpression = config.template;
@@ -85,5 +67,5 @@ module.exports = function (RED) {
         });
     }
 
-    RED.nodes.registerType("transform", TransformNode);
+    RED.nodes.registerType("com.autana.jsonata", JSONataTransformNode);
 }

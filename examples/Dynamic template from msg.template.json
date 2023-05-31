@@ -1,0 +1,87 @@
+[
+    {
+        "id": "6a20df187ceefe60",
+        "type": "tab",
+        "label": "Dynamic template from msg.template",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "15edfb734fba4055",
+        "type": "inject",
+        "z": "6a20df187ceefe60",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "template",
+                "v": "payload.name & \" \" & payload.lastName",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"name\":\"Frodo\",\"lastName\":\"Baggins\"}",
+        "payloadType": "json",
+        "x": 150,
+        "y": 140,
+        "wires": [
+            [
+                "ac28fbba5ff24916"
+            ]
+        ]
+    },
+    {
+        "id": "ac28fbba5ff24916",
+        "type": "com.autana.jsonata",
+        "z": "6a20df187ceefe60",
+        "name": "",
+        "template": "",
+        "templateType": "jsonata",
+        "target": "payload",
+        "targetType": "msg",
+        "x": 320,
+        "y": 140,
+        "wires": [
+            [
+                "c1cb3bcd6b2128ec"
+            ]
+        ]
+    },
+    {
+        "id": "c1cb3bcd6b2128ec",
+        "type": "debug",
+        "z": "6a20df187ceefe60",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 500,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "4c85958a923cd5c8",
+        "type": "comment",
+        "z": "6a20df187ceefe60",
+        "name": "from msg.template template",
+        "info": "",
+        "x": 180,
+        "y": 80,
+        "wires": []
+    }
+]

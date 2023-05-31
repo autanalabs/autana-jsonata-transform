@@ -1,0 +1,88 @@
+[
+    {
+        "id": "1584ddfa74d3c665",
+        "type": "tab",
+        "label": "from msg.whatever template and to another field",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "2c801f98ab272479",
+        "type": "inject",
+        "z": "1584ddfa74d3c665",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "whatever",
+                "v": "payload.name & \" \" & payload.lastName",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"name\":\"Frodo\",\"lastName\":\"Baggins\"}",
+        "payloadType": "json",
+        "x": 190,
+        "y": 160,
+        "wires": [
+            [
+                "5f1a53712936b2b0"
+            ]
+        ]
+    },
+    {
+        "id": "5f1a53712936b2b0",
+        "type": "com.autana.jsonata",
+        "z": "1584ddfa74d3c665",
+        "name": "",
+        "template": "whatever",
+        "templateType": "msg",
+        "target": "transformResult",
+        "targetType": "msg",
+        "x": 360,
+        "y": 160,
+        "wires": [
+            [
+                "4c83a39d8c40e71c"
+            ]
+        ]
+    },
+    {
+        "id": "4c83a39d8c40e71c",
+        "type": "debug",
+        "z": "1584ddfa74d3c665",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "transformResult",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 540,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "de35dbc007fc11d3",
+        "type": "comment",
+        "z": "1584ddfa74d3c665",
+        "name": "from msg.whatever template and to another field",
+        "info": "",
+        "x": 280,
+        "y": 100,
+        "wires": []
+    }
+]

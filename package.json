@@ -1,6 +1,6 @@
 {
   "name": "autana-jsonata-transform",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A JSONata message transformation node for Node-RED",
   "contributors": [
     "temior",
